@@ -1,0 +1,339 @@
+<!-- box-sizing: border-box; -->
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Property names that are prefixed with --, like --example-name, represent custom properties that contain a value that can be used in other declarations
+    :root {  //here html is the root element
+        --base: #ffc600; //Sort of variables that start with --
+        --spacing: 10px;
+        --blur: 10px;
+      }
+      img {
+      padding: var(--spacing);  //Used with --prefix
+      background: var(--base);
+      filter: blur(var(--blur));
+    } -->
+<head>
+    <title>Document</title>
+    <style>
+        *{ margin:0px;
+            padding:0px;
+            box-sizing:border-box;
+         } 
+        /*border-box tells the browser to account for any border and padding in the values you specify for an element's width and height. If you set an element's width to 100 pixels, that 100 pixels will include any border or padding you added, and the content box will shrink to absorb that extra width*/
+        
+        .class1{
+            /* text-align:center;  */
+        }
+        /* letter-spacing*/
+        /* vertical-align: middle; it also works if height of the container is set */
+        /* line-height specifies the height of the line */ 
+        /***********************************************How to implement*************************************************************/
+        /* Best thing is to make a container and make sections navbar, footer, left article, right article etc and make changes in it*/
+        /****************************************************************************************************************************/
+        
+        /* height:fit-content; very useful, adjusts the size of the container so that conent can fit in */
+        /*overflow:auto; It brings navigation bar*/
+        /* Margin:auto works only if display:block and width is set */
+        /* overflow:none; because when float:left then it floats out of its parent element*/
+        /* display:inline-block; setting as inline but able to change width */
+        /* background:url('') */
+        /* z-index works on only positioned elements other than static */
+
+        /*float and clear*/
+
+        /*position*/
+
+        /*visibility and z-index*/
+
+        /* FlexBox very important*/
+        .container {
+            /* Flexbox */
+            height: 544px;
+            width: 100%;
+            border: 2px solid black;
+            display: flex;
+            /* Initialize the container as a flex box */
+
+            /* Flex properties for a flex container */
+
+            /* flex-direction: row; (Default value of flex-direction is row) */
+            /* flex-direction: column;
+            flex-direction: row-reverse;
+            flex-direction: column-reverse; */
+
+
+            /* flex-wrap: wrap; (Default value of flex-direction is no-wrap) */
+            /* flex-wrap: wrap-reverse; */
+
+            /* This is a shorthand for flex-direction: and flex-wrap: ;; */
+            /* flex-flow: row-reverse wrap; */
+
+            /* justify-content will justify the content in horizontal direction */
+            /* justify-content: center; */
+            /* justify-content: space-between; */
+            /* justify-content: space-evenly; */
+            /* justify-content: space-around; */
+
+            /* justify-content will justify the content in vertical direction */
+            /* align-items: center; */
+            /* align-items: flex-end; */
+            /* align-items: flex-start; */
+            /* align-items: stretch; */
+
+            /* align-content to set how multiple lines are spaced apart from each other. This property takes the following values:
+
+             flex-start: Lines are packed at the top of the container.
+             flex-end: Lines are packed at the bottom of the container.
+             center: Lines are packed at the vertical center of the container.
+             space-between: Lines display with equal spacing between them.
+             space-around: Lines display with equal spacing around them.
+             stretch: Lines are stretched to fit the container. */
+        }
+
+        /* Notice that when the flex direction is a column, justify-content changes to the vertical and align-items to the horizontal. */
+        /* Notice that when you set the direction to a reversed row or column, start and end are also reversed, start comes at right of screen and vice-verca */
+        #item-1 {
+            /* Flex properties for a flex item */
+            /* Higher the order, later it shows up in the container */
+            /* order: 2; */
+
+            /* flex-grow: 2; //very important, always use atleast flex-grow:1
+            flex-shrink: 2; */
+
+        }
+
+        #item-2 {
+            /* flex-grow: 3;
+            flex-shrink: 3 ; */
+            flex-basis: 160px;
+            /* when flex-direction is set to row flex-basis: will control width */
+            /* when flex-direction is set to column flex-basis: will control height */
+        }
+
+        #item-3 {
+
+            /* flex: 2 2 230px; flex-grow flex-shrink flex-baisis*/
+            align-self: flex-start;
+            align-self: flex-end;
+            align-self: center;
+
+        }
+
+        /* em:- 
+            Font-sizes are inherited relative to the parent element.
+            10em means ten times of the parent element.
+            Padding and margin are 10 times of font-size */
+
+        /* rem:-
+            html{                    /*can set as this*
+            font-size: 25px;
+            }
+            Font-size gets set according to the font-size of the root element.
+            In general, <html> is the root element.
+            In rem, "r" stands for "root." */
+
+        /* vh:- 
+            It stands for viewport height.
+            vh is equal to the 1/100 times of the viewport height.
+            Example: Suppose height of the browser is 1000px, so 1vh is equaled to (1/100)*1000= 10px. 
+            Similarily for vw*/
+
+        /* media queries*/
+        @media only screen and (min-width:200px) and (max-width:800px) {}
+
+        /*More on CSS selectors*/
+
+        div p {
+            /*when p is any child of div*, grandchild, grand grand child*/
+        }
+
+        div>p {
+            /*p that is a direct child of div*/
+        }
+
+        div+p {
+            /*when p is the next sibling of div*/
+        }
+
+        /*pseudo selectors and nth child selector*/
+
+        input[type="text"] {
+            border: 2px solid red;
+            padding: 10px 8px;
+        }
+
+        a[target] {
+            font-size: 10vh;
+            color: aqua;
+        }
+
+        li:nth-child(3) {
+            /*For third child*/
+            color: cyan;
+        }
+
+        li:nth-child(2n+1) {
+            /*For every (2n+1)th child*/
+            color: blue;
+        }
+
+        li:nth-child(odd) {
+            background-color: bisque;
+        }
+
+        /* ************************************************************************************** */
+        /* ************************************************************************************** */
+        /* ************************************************************************************** */
+        /* ****************************Veryyyy veryyyy important********************************* */
+        /* ************************************************************************************** */
+        /* ***********************************Grid in css**************************************** */
+
+        .container {
+            /* Can add if we want in that particular width */
+            /* width:50vw;  */
+            display: grid;
+            /* Makes three columns with width 300px, 150px and 150px */
+            grid-template-columns: 300px 150px 150px;
+            /*Makes three columns with width 300px, width equal to space left and 100px*/
+            grid-template-columns: 300px auto 150px;
+            /*Fr units for in that specific ratio to be divided in*/
+            grid-template-columns: 4fr 4fr 1fr;
+            /* Divide equally in parts of 3 */
+            grid-template-columns: repeat(3, auto);
+            /*can write units also instead of auto*/
+            /* For setting the gap between rows and columns */
+            grid-gap: 80px;
+        }
+
+        #element1{
+            /* We can manually set the cell a particular element should occupy in a grid */
+            grid-column: 1;
+            grid-row:2;
+        }
+
+        #element2{
+            /* a short-hand for row start, column start, row end and column end */
+            grid-area: 1 / 1 / 6 / 2;
+        }
+
+        .container {
+            /* Similar to columns */
+            display: grid;
+            grid-template-rows: 1fr 3fr 10fr;
+            /*sets first three rows in the ratio 1, 3 and 10 but rest are set in 2fr with it( 1fr by default)*/
+            grid-auto-rows: 2fr;
+            grid-template-columns: 1fr 4fr 2fr;
+            /* direction:rtl can be used to set the direction from right to left */
+        }
+        
+        /* 
+        grid-template is a shorthand property that combines grid-template-rows and grid-template-columns.
+        For example, grid-template: 50% 50% / 200px; will create a grid with two rows that are 50% each, and one column that is 200 pixels wide. */
+
+        /* ************************************************************************************** */
+        /*spanning rows and columns*/
+        /* child pseudo-selector */
+        .item:first-child {
+            grid-column-start: 1;
+            /*Starts on first line, second line is the middle one (intersection of two boxes) and third line is the end one*/
+            grid-column-end: 3;
+            grid-row-start: 1;
+            /*Similarily here, ends on 4th line*/
+            grid-row-end: 4;
+        }
+        #item-1{
+        /* span additionally specifies the no. of cells it will cover; in the below case, it starts from 6th column to span 3 columns till 8 */
+          grid-column-start:span 3; 
+          grid-column-end:8; 
+          /* Here item can be anything live navbar, side bar, section, article within a grid that will take the said space in the grid */
+          /* Suppose a garden is our grid, and this specific space for carrots */
+        /* grid-column: 2 / 4; will set the grid item to start on the 2nd vertical grid line and end on the 4th grid line. */
+        }
+        #item-2{
+            /* start on column 1 and span 2 columns: */
+            grid-column: 1 / span 2;
+        }
+
+        .item {
+            height: 100px;
+            border: 2px solid black;
+            background-color: blanchedalmond;
+            /* margin:2px; */
+        }
+
+        /* Manually setting the row for items, if we want item1 in row2 and item2 in row1 */
+        /* Similarily, we can use grid-column */
+        #item1 {
+            /* It's better to use grid-auto-flow:dense; when using grid-column:; As the Grid auto-placement algorithm lays out items in the container, it uses next available empty cells */
+            /* grid-auto-flow: dense; */
+            grid-row: 2;
+
+            /* Similar to the order of flexbox */
+            order:4;
+        }
+
+        #item2{
+            justify-self: right; /* Content in it moves to the right, similarily align-self for in vertical direction*/
+            grid-row: 1;
+        }
+
+        .container {
+            display: grid;
+            grid-gap: 1rem;
+            /* grid-template-columns: 2fr 2fr 2fr; */
+            /* justify-content: center; */
+            /* align-items: center; */
+
+            /* To achieve responsiveness, very very helpful */
+            /* It will automatically fill the items with a minimum width of 400px, and maximum 1fr, and will wrap accordingly */
+            /* ************************************************************************************ */
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+
+            /*auto can be very crucial when the container overflows, it prevents that and adjusts the height accordingly*/
+            grid-template-rows: 0.4fr 2.5fr auto 1.3fr;
+        }
+
+        /* *************************************************************************************
+        ******************************grid-template-area**************************************/
+
+        .container {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-areas:
+                /* Here the no. of columns should be same, in second line, it divided in the ratio 3:1 */
+                /* We have to define the grid-area by targeting the elements by their id, we can name grid-area by our choice but that same name has to be used in grid-template-area*/
+                'navbar navbar navbar navbar'
+                'section section section aside'
+                '. . . .'                              /* . leaves the grid cell as it is */
+                'footer footer footer footer ';
+        }
+
+        .item {
+            background-color: yellow;
+            border: 3px solid black;
+            padding: 12px 23px;
+        }
+
+        #navbar {
+            grid-area: navbar;
+        }
+
+        #section {
+            grid-area: section;
+        }
+
+        #aside {
+            grid-area: aside;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="class1"></p>
+</body>
+
+</html>

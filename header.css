@@ -1,0 +1,126 @@
+:root{
+    --main-color: #0b0d17;
+    --secend-color: #d2d8f9;
+    --hover-color: #85868b;
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
+    --main-font: "Barlow Condensed", sans-serif;
+    --secend-font: "Bellefair", serifs;
+}
+header{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:96px;
+}
+.line{
+    height:1px;
+    width: 40rem;
+    background-color: #fff;
+    margin-left: 5rem;
+}
+navbar{
+    width: 60%;
+}
+navbar ul{
+    display:flex;
+    gap:8px;
+}
+navbar ul li{
+    margin:1.5rem;
+    display: inline;
+}
+navbar ul li a{
+    font-family: var(--main-font);
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+navbar ul li a:active:after{
+    color:red;
+}
+.hamburger{
+    display:none;
+    cursor:pointer;
+}
+img.icon{ /* Both img and class icon*/
+    content: url('Images/icon-close.png');
+}
+header .blur{
+    width: 60%;
+    height: 96px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(81.5485px);
+    position: absolute;
+    right: 0;
+    z-index:-2;
+}
+@media only screen and (max-width:900px){
+    .line{
+        display:none;
+        overflow: hidden;
+    }
+    navbar ul{
+        justify-content: space-between;
+        padding-left:20px;
+        gap:25px;
+    }
+    navbar ul li{
+        gap:0px;
+        margin:8px 0px;
+    }
+    navbar b{
+        display: none;
+        overflow:hidden;
+    }
+    header .blur{
+        width:68%;
+    }
+}
+@media only screen and (max-width:550px){
+    .line{
+        display: none;
+    }
+    .blur{
+        display: none;
+    }
+    .hamburger{
+        z-index: 100;
+        display: block;
+        /* overflow: hidden; */
+    }
+    header{
+        align-items: flex-start;
+        height:7vh;
+    }
+    navbar{
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(81.5485px);
+        height: 100vh;
+        position: absolute;
+        top:0px;
+        right: 0px;
+        width:80%;
+        display: none;
+        overflow: hidden;
+    }
+    navbar.active{  /*meets both the conditins*/
+        display: block;
+    }
+    navbar ul{
+        padding-left: 0px;
+        margin-top:80px;
+        display: flex;
+        flex-direction: column;
+    }
+    .content h1{
+        font-size: 3rem;
+    }
+    navbar b{
+        margin-left:20px;
+        margin-right:10px;
+        display: inline;
+    }
+
+}
