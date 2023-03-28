@@ -109,7 +109,7 @@ header .blur{
         display: block;
     }
     navbar ul{
-        padding-left: 0px;
+        padding-left: 25px;
         margin-top:80px;
         display: flex;
         flex-direction: column;
@@ -117,10 +117,16 @@ header .blur{
     .content h1{
         font-size: 3rem;
     }
-    navbar b{
-        margin-left:20px;
-        margin-right:10px;
-        display: inline;
+    navbar .techie{
+        border-bottom: none;
     }
-
+    navbar .home{
+        border-bottom: none;
+    }
+    navbar .Destination{
+        border-bottom:none;
+    }
+    navbar .crew{
+        border-bottom:none;
+    }
 }
