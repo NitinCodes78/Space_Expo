@@ -26,6 +26,10 @@ body{
 .heading b{
     color: #979797;
 }
+navbar .crew{
+    border-bottom: 3.5px solid white;
+    padding-bottom:38px;
+}
 section{
     display: flex;
     justify-content: space-between;
@@ -69,6 +73,9 @@ section .bio{
     border-radius: 50%;
     background-color: #36373f;
     cursor: pointer;
+}
+.dot-1{
+    background-color: white;
 }
 @media only screen and (max-width:1250px){
     body{

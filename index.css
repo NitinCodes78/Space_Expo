@@ -21,6 +21,10 @@ section{
     align-items: flex-end;
     padding-bottom: 10%;
 }
+navbar .home{
+    border-bottom: 3.5px solid white;
+    padding-bottom:38px;
+}
 .content{
     width:40%;
 }

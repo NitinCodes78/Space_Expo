@@ -26,6 +26,10 @@ body {
     margin-right: 28px;
     color: #979797;
 }
+navbar .Destination{
+    border-bottom: 3.5px solid white;
+    padding-bottom:38px;
+}
 section{
     display: flex;
     justify-content: space-between;
@@ -52,6 +56,10 @@ section img{
     letter-spacing: 2.7px;
     font-family: var(--main-font);
     cursor: pointer;
+}
+#moon{
+    border-bottom: 3px solid white;
+    padding-bottom: 8px;
 }
 .main-box h1{
     font-size: 100px;
